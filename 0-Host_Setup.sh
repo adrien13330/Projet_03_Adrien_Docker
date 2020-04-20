@@ -18,12 +18,24 @@ sudo chmod +x vmware-workstation-player
 curl https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb --output /home/$USER/Downloads/vagrant-2.2.7.deb
 sudo dpkg -i /home/$USER/Downloads/vagrant-2.2.7.deb
 
-#Vagrant Root
+#Vagrant Root Setup
 mkdir vagrant_projet_3
 cd vagrant_projet_3
 
+#WWW Setup
+mkdir vagrant_projet_3/html
+cd html
+echo "<!DOCTYPE html>" >> index.html  | sudo tee -a /etc/apt/sources.list
+echo "<html>" >> index.html  | sudo tee -a /etc/apt/sources.list
+echo "  <body>" >> index.html  | sudo tee -a /etc/apt/sources.list
+echo "    <h1>Getting started with Vagrant!</h1>" >> index.html  | sudo tee -a /etc/apt/sources.list
+echo "  </body>" >> index.html  | sudo tee -a /etc/apt/sources.list
+echo "</html>" >> index.html  | sudo tee -a /etc/apt/sources.list
+cd ..
+
 #Vagrant Setup
 vagrant init generic/debian10
+vagrant box add generic/debian10
 
 #Vagrantfile Setup
 mv Vagrantfile Vagrantfile.old
@@ -39,3 +51,8 @@ echo "if ! [ -L /var/www ]; then" >> bootstrap.sh  | sudo tee -a /etc/apt/source
 echo "  rm -rf /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo "  ln -fs /vagrant /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo "fi" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+
+#Vagrant Startup
+vagrant up
+
+
