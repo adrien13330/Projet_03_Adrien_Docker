@@ -1,3 +1,4 @@
+#Setup
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt install -y curl
@@ -14,3 +15,15 @@ sudo chmod +x vmware-workstation-player
 #Vagrant 2.2.7
 curl https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb --output /home/$USER/Downloads/vagrant-2.2.7.deb
 sudo dpkg -i /home/$USER/Downloads/vagrant-2.2.7.deb
+
+#Vagrant root
+mkdir vagrant_projet_3
+cd vagrant_projet_3
+vagrant init
+
+#Vagrantfile setup
+echo "Vagrant.configure(\"2\") do |config|" >> Vagrantfile
+echo "  config.vm.box = \"generic/debian10\"" >> Vagrantfile
+echo "  config.vm.provision :shell, path: \"bootstrap.sh\"" >> Vagrantfile
+echo "  config.vm.network \"forwarded_port\", guest: 80, host: 4567" >> Vagrantfile
+echo "end" >> Vagrantfile
