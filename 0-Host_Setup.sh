@@ -24,10 +24,16 @@ cd vagrant_projet_3
 vagrant init
 
 #Vagrantfile setup
-
 mv Vagrantfile Vagrantfile.old
 echo "Vagrant.configure(\"2\") do |config|" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.box = \"generic/debian10\"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.provision :shell, path: \"bootstrap.sh\"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.network \"forwarded_port\", guest: 80, host: 4567" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "end" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
+
+#Bootstrap setup
+echo "apt-get install -y apache2" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo "if ! [ -L /var/www ]; then" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo "  rm -rf /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo "  ln -fs /vagrant /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo "fi" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
