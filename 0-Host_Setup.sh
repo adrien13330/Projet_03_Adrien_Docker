@@ -1,6 +1,8 @@
-#Setup
+#Basic Setup
 sudo apt-get -y update
 sudo apt-get -y upgrade
+
+#Curl
 sudo apt install -y curl
 
 #Visual Studio Code
