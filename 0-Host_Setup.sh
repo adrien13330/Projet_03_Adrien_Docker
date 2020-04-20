@@ -37,5 +37,3 @@ echo "if ! [ -L /var/www ]; then" >> bootstrap.sh  | sudo tee -a /etc/apt/source
 echo "  rm -rf /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo "  ln -fs /vagrant /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo "fi" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-
-sudo chmod
