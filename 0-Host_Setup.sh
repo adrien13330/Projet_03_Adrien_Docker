@@ -22,6 +22,8 @@ cd vagrant_projet_3
 vagrant init
 
 #Vagrantfile setup
+
+mv Vagrantfile Vagrantfile.old
 echo "Vagrant.configure(\"2\") do |config|" >> Vagrantfile
 echo "  config.vm.box = \"generic/debian10\"" >> Vagrantfile
 echo "  config.vm.provision :shell, path: \"bootstrap.sh\"" >> Vagrantfile
