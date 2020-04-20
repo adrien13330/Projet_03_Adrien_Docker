@@ -1,6 +1,6 @@
 #Basic Setup
-sudo apt-get -y update
-sudo apt-get -y upgrade
+sudo apt -y update
+sudo apt -y upgrade
 
 #Curl
 sudo apt install -y curl
@@ -10,9 +10,16 @@ curl https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300
 sudo dpkg -i /home/$USER/Downloads/code.deb
 
 #VMware Workstation Player 15.5.2
-curl http://download3.vmware.com/software/player/file/VMware-Player-15.5.2-15785246.x86_64.bundle --output /home/$USER/Downloads/vmware-workstation-player
-sudo chmod +x vmware-workstation-player
-./vmware-workstation-player
+#curl http://download3.vmware.com/software/player/file/VMware-Player-15.5.2-15785246.x86_64.bundle --output /home/$USER/Downloads/vmware-workstation-player
+#sudo chmod +x vmware-workstation-player
+#./vmware-workstation-player
+#vagrant plugin install vagrant-vmware-desktop
+
+#Virtualbox
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo apt update
+sudo apt install virtualbox-6.0
 
 #Vagrant 2.2.7
 curl https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb --output /home/$USER/Downloads/vagrant-2.2.7.deb
