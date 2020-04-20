@@ -18,12 +18,14 @@ sudo chmod +x vmware-workstation-player
 curl https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb --output /home/$USER/Downloads/vagrant-2.2.7.deb
 sudo dpkg -i /home/$USER/Downloads/vagrant-2.2.7.deb
 
-#Vagrant root
+#Vagrant Root
 mkdir vagrant_projet_3
 cd vagrant_projet_3
-vagrant init
 
-#Vagrantfile setup
+#Vagrant Setup
+vagrant init generic/debian10
+
+#Vagrantfile Setup
 mv Vagrantfile Vagrantfile.old
 echo "Vagrant.configure(\"2\") do |config|" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.box = \"generic/debian10\"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
@@ -31,7 +33,7 @@ echo "  config.vm.provision :shell, path: \"bootstrap.sh\"" >> Vagrantfile  | su
 echo "  config.vm.network \"forwarded_port\", guest: 80, host: 4567" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "end" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 
-#Bootstrap setup
+#Bootstrap Setup
 echo "apt-get install -y apache2" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo "if ! [ -L /var/www ]; then" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo "  rm -rf /var/www" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
