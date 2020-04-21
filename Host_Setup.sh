@@ -44,11 +44,14 @@ cd ..
 vagrant init generic/debian10
 vagrant box add generic/debian10
 
+#Vagrant Plugin for box generic/debian10
+vagrant plugin install vagrant-vbguest
+
 #Vagrantfile Setup
 mv Vagrantfile Vagrantfile.old
 echo "Vagrant.configure(\"2\") do |config|" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.box = \"generic/debian10\"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
-echo "config.vm.synced_folder "", "/vagrant"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
+echo "  config.vm.synced_folder "", "/vagrant"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.provision :shell, path: \"bootstrap.sh\"" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "  config.vm.network \"forwarded_port\", guest: 80, host: 4567" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo "end" >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
@@ -62,5 +65,4 @@ echo "fi" >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 
 #Vagrant Startup
 vagrant up
-
 
