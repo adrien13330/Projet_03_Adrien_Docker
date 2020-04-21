@@ -33,11 +33,11 @@ cd vagrant_projet_3
 mkdir html
 cd html
 echo '<!DOCTYPE html>' >> index.html  | sudo tee -a /etc/apt/sources.list
-echo "<html>" >> index.html  | sudo tee -a /etc/apt/sources.list
-echo "  <body>" >> index.html  | sudo tee -a /etc/apt/sources.list
-echo "    <h1>Getting started with Vagrant!</h1>" >> index.html  | sudo tee -a /etc/apt/sources.list
-echo "  </body>" >> index.html  | sudo tee -a /etc/apt/sources.list
-echo "</html>" >> index.html  | sudo tee -a /etc/apt/sources.list
+echo '<html>' >> index.html  | sudo tee -a /etc/apt/sources.list
+echo '  <body>' >> index.html  | sudo tee -a /etc/apt/sources.list
+echo '    <h1>Getting started with Vagrant!</h1>' >> index.html  | sudo tee -a /etc/apt/sources.list
+echo '  </body>' >> index.html  | sudo tee -a /etc/apt/sources.list
+echo '</html>' >> index.html  | sudo tee -a /etc/apt/sources.list
 cd ..
 
 #Vagrant Setup
