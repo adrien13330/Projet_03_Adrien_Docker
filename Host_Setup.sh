@@ -74,3 +74,12 @@ echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo te
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 sudo apt update
 sudo apt install ansible -y
+
+#Docker CE Setup - Latest
+sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
