@@ -19,7 +19,7 @@ sudo dpkg -i /home/$USER/Downloads/code.deb
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 sudo apt update
-sudo apt install virtualbox-6.0
+sudo apt install -y virtualbox-6.0
 
 #Vagrant 2.2.7
 curl https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb --output /home/$USER/Downloads/vagrant-2.2.7.deb
