@@ -30,7 +30,7 @@ mkdir vagrant_projet_3
 cd vagrant_projet_3
 
 #WWW Setup
-mkdir vagrant_projet_3/html
+mkdir html
 cd html
 echo "<!DOCTYPE html>" >> index.html  | sudo tee -a /etc/apt/sources.list
 echo "<html>" >> index.html  | sudo tee -a /etc/apt/sources.list
