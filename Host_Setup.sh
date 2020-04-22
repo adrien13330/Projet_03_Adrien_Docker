@@ -2,6 +2,9 @@
 sudo apt -y update
 sudo apt -y upgrade
 
+#Tools for Host (Host is a Debian 10 VMware VM)
+sudo apt install -y open-vm-tools-desktop
+
 #Curl
 sudo apt install -y curl
 
