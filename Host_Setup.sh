@@ -15,7 +15,7 @@ sudo dpkg -i /home/$USER/Downloads/code.deb
 #./vmware-workstation-player
 #vagrant plugin install vagrant-vmware-desktop
 
-#Virtualbox
+#Vagrant Virtualbox
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 sudo apt update
@@ -59,7 +59,7 @@ echo '    v.memory = 4096' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo '  end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo 'end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 
-#Bootstrap Setup
+#Vagrant Bootstrap Setup
 echo 'apt-get install -y apache2' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo 'if ! [ -L /var/www ]; then' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo '  rm -rf /var/www' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
