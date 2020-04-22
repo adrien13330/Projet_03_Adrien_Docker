@@ -62,21 +62,14 @@ echo '    v.memory = 4096' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo '  end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo 'end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 
-#Vagrant Bootstrap Setup
-echo 'apt-get install -y apache2' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-echo 'if ! [ -L /var/www ]; then' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-echo '  rm -rf /var/www' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-echo '  ln -fs /vagrant /var/www' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-echo 'fi' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+#Vagrant Bootstrap Setup : Ansible - Latest
+echo 'echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt update' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt install ansible -y' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 
 #Vagrant Startup
 vagrant up --provider=virtualbox
-
-#Ansible Setup - Latest
-echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-sudo apt update
-sudo apt install ansible -y
 
 #Docker CE Setup - Latest
 sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
