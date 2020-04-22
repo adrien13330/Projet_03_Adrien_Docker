@@ -43,14 +43,14 @@ echo '  </body>' >> index.html  | sudo tee -a /etc/apt/sources.list
 echo '</html>' >> index.html  | sudo tee -a /etc/apt/sources.list
 cd ..
 
-#Vagrant Setup
+#Vagrant Config Setup
 vagrant init generic/debian10
 vagrant box add generic/debian10 --provider=virtualbox
 
 #Vagrant Plugin for box generic/debian10
 vagrant plugin install vagrant-vbguest
 
-#Vagrantfile Setup
+#Vagrant Vagrantfile Setup
 mv Vagrantfile Vagrantfile.old
 echo 'Vagrant.configure("2") do |config|' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo '  config.vm.box = "generic/debian10"' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
@@ -61,6 +61,10 @@ echo '  config.vm.provider "virtualbox" do |v|' >> Vagrantfile  | sudo tee -a /e
 echo '    v.memory = 4096' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo '  end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo 'end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
+
+#Vagrant Bootstrap Setup : Visual Studio Code
+curl https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300ddd/code_1.44.2-1587059832_amd64.deb --output /home/$USER/Downloads/code.deb
+sudo dpkg -i /home/$USER/Downloads/code.deb
 
 #Vagrant Bootstrap Setup : Ansible - Latest
 echo 'echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
