@@ -63,8 +63,8 @@ echo '  end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 echo 'end' >> Vagrantfile  | sudo tee -a /etc/apt/sources.list
 
 #Vagrant Bootstrap Setup : Visual Studio Code
-curl https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300ddd/code_1.44.2-1587059832_amd64.deb --output /home/$USER/Downloads/code.deb
-sudo dpkg -i /home/$USER/Downloads/code.deb
+echo 'curl https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300ddd/code_1.44.2-1587059832_amd64.deb --output /home/$USER/Downloads/code.deb' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo dpkg -i /home/$USER/Downloads/code.deb' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 
 #Vagrant Bootstrap Setup : Ansible - Latest
 echo 'echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
