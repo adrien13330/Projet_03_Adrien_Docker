@@ -68,15 +68,16 @@ echo 'sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9
 echo 'sudo apt update' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo 'sudo apt install ansible -y' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 
+#Vagrant Bootstrap Setup : Docker CE - Latest
+echo 'sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt -y update' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'apt-cache policy docker-ce' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt install -y docker-ce docker-ce-cli containerd.io' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo usermod -aG docker $USER' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'pkill -KILL -u $USER' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+
+
 #Vagrant Startup
 vagrant up --provider=virtualbox
-
-#Docker CE Setup - Latest
-sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo apt -y update
-apt-cache policy docker-ce
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker $USER
-pkill -KILL -u $USER
