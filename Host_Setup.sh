@@ -67,7 +67,7 @@ echo '  ln -fs /vagrant /var/www' >> bootstrap.sh  | sudo tee -a /etc/apt/source
 echo 'fi' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 
 #Vagrant Startup
-vagrant up
+vagrant up --provider=virtualbox
 
 #Ansible Setup - Latest
 echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
