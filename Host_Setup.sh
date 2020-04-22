@@ -69,8 +69,8 @@ echo 'sudo dpkg -i /home/$USER/Downloads/code.deb' >> bootstrap.sh  | sudo tee -
 #Vagrant Bootstrap Setup : Ansible - Latest
 echo 'echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 echo 'sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-echo 'sudo apt update' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
-echo 'sudo apt install ansible -y' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt -y update' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
+echo 'sudo apt -y install ansible' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
 
 #Vagrant Bootstrap Setup : Docker CE - Latest
 echo 'sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common' >> bootstrap.sh  | sudo tee -a /etc/apt/sources.list
