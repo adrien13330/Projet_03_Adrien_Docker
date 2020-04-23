@@ -16,4 +16,3 @@ sudo apt -y update
 apt-cache policy docker-ce
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $USER
-pkill -KILL -u $USER
