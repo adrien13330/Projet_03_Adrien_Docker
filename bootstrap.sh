@@ -1,18 +1,22 @@
-#Visual Studio Code
-curl https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300ddd/code_1.44.2-1587059832_amd64.deb --output /home/$USER/Downloads/code.deb
-sudo dpkg -i /home/$USER/Downloads/code.deb
+#Vagrant Bootstrap Setup: VSCode
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt install -y xfce4
+sudo apt -y install software-properties-common apt-transport-https curl
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt -y update
+sudo apt install -y code
 
-#Ansible Setup - Latest
+#Vagrant Bootstrap Setup: Ansible - Latest
 echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-sudo apt update
-sudo apt install ansible -y
+sudo apt -y update
+sudo apt -y install ansible
 
-#Docker Setup - Latest
-sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+#Vagrant Bootstrap Setup: Docker - Latest
+sudo apt-get update && sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo apt -y update
-apt-cache policy docker-ce
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker $USER
+sudo apt update && sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker vagrant
