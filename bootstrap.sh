@@ -8,6 +8,8 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt update -y
 sudo apt install -y code
 #test
+sudo apt -y install snapd
+sudo snap install --classic code
 
 #Vagrant Bootstrap Setup: Ansible - Latest
 echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
