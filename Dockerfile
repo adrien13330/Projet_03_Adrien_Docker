@@ -4,4 +4,3 @@ RUN apt update -yq \
 && apt install nginx
 
 EXPOSE 4568
-VOLUME /app/logs
