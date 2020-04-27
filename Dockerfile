@@ -1,6 +1,7 @@
-FROM debian:9
+FROM debian:latest
+RUN apt update -y \
+&& apt install openssh* -y
 
-RUN apt update -yq \
-&& apt install nginx
+EXPOSE 22
 
-EXPOSE 4568
+ENTRYPOINT /bin/bash
