@@ -26,13 +26,14 @@ sudo dpkg -i /home/$USER/Downloads/vagrant-2.2.7.deb
 mkdir vagrant_projet_3
 cd vagrant_projet_3
 
-#Vagrant Plugin for box generic/debian10
-vagrant plugin install vagrant-vbguest
+#Vagrant Plugin for box generic/debian10 : See bootstrap.sh
+#Vagrant Bootstrap Setup : Visual Studio Code : See bootstrap.sh
+#Vagrant Bootstrap Setup : Ansible - Latest : See bootstrap.sh
+#Vagrant Bootstrap Setup : Docker CE - Latest : See bootstrap.sh
 
-#Vagrant Bootstrap Setup : Visual Studio Code
-#Vagrant Bootstrap Setup : Ansible - Latest
-#Vagrant Bootstrap Setup : Docker CE - Latest
-
+#Vagrant Config Setup
+vagrant init generic/debian10
+vagrant box add generic/debian10 --provider=virtualbox
 
 #Vagrant Startup
 vagrant up --provider=virtualbox
