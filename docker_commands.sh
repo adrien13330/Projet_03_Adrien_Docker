@@ -9,4 +9,6 @@ docker ps -a
 docker attach CONTAINER_ID
 docker exec -it CONTAINER_ID /bin/bash
 
-#Ctrl + p + q to exit
+#Keeping the container alive
+CMD tail -f /dev/null
+#Ctrl + p + q to move to background
