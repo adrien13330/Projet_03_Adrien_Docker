@@ -3,7 +3,17 @@ A) Ce repository stocke mes fichiers pour le projet 3 d'OpenClassrooms
 Etape 0 : .gitignore, .dockerignore, LICENCE.md, README.txt
 Etape 4 : Dockerfile, docker_commands.sh
 
-B) Mon environnement de travail pour ce projet :
+Usage :
+  1. Depuis la VM VMware
+    - Accéder à nginx depuis http://172.17.0.1:8080
+  2. Depuis la VM Vagrant
+    - Accéder à nginx par :
+        - wget -O- localhost
+        - wget -O- 172.17.0.2
+    - Accéder en SSH au container Docker par :
+        - ssh root@localhost -p 9090
+
+C) Mon environnement de travail pour ce projet :
   1. PC
   - Windows 10
   - i7 4960X
