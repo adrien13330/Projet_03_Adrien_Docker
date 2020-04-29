@@ -39,4 +39,3 @@ C) Mon environnement de travail pour le projet 3 : PC => VM VMware => VM Vagrant
   4. Docker Container
   - Debian 10
   - Applications : ssh, nginx
-  - Ports : 22, 80
