@@ -1,4 +1,4 @@
-A) Ce repository stocke mes fichiers pour le projet 3 d'OpenClassrooms
+A) Ce repository stocke mes fichiers pour le projet 3 d'OpenClassrooms, partie "Docker"
 
 Etape 0 : .gitignore, .dockerignore, LICENCE.md, README.txt
 Etape 4 : Dockerfile, docker_commands.sh
