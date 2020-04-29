@@ -1,7 +1,6 @@
 A) Ce repository stocke mes fichiers pour le projet 3 d'OpenClassrooms
 
 Etape 0 : .gitignore, .dockerignore, LICENCE.md, README.txt
-
 Etape 4 : Dockerfile, docker_commands.sh
 
 B) Mon environnement de travail pour ce projet :
