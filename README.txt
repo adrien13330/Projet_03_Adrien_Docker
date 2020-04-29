@@ -11,7 +11,7 @@ B) Usage :
         - wget -O- localhost
         - wget -O- 172.17.0.2
     - Accéder en SSH au container Docker par :
-        - ssh root@localhost -p 9090
+        - ssh root@localhost -p 2222
 
 C) Mon environnement de travail pour ce projet :
   1. PC
