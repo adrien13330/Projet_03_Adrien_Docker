@@ -1,17 +1,33 @@
-WPP Logo
-Wsus Package Publisher
+A) Ce repository stocke mes fichiers pour le projet 3 d'OpenClassrooms
 
-Publish third-party applications into your Wsus.
+Etape 0 : Host_Setup.sh, .gitignore, .dockerignore, LICENCE.md, README.txt
+Etape 1 : https://github.com/adrien13330/Projet_03_Adrien
+Etape 2 : Vagrantfile
+Etape 3 : Vagrantfile, bootstrap.sh
+Etape 4 : Dockerfile, docker_commands.sh
 
-Latest Release: v1.4.2002.4 - 04 February 2020
-Description
-English:
-
-Wsus Package Publisher allows you to publish your own updates as MSI, MSP or EXE files. Hence, you can deploy applications like Adobe Reader, Java, Flash Player or Symantec Endpoint Protection and update them.
-
-You can import updates from vendor catalogs like Dell, HP and Fujitsu to publish hardware updates like drivers or new BIOS versions to your servers and PCs.
-Français:
-
-Wsus Package Publisher permet de publier vos propres mises à jour sous forme de fichiers MSI, MSP ou EXE. Ainsi, vous pouvez déployer des applications telles qu'Adobe Reader, Java, Flash Player ou Symantec Endpoint Protection. Et les mettre à jour.
-
-Vous pourrez importer des mises à jour à partir de catalogues d'éditeur (Adobe, Dell, HP...). Afin de publier des pilotes ou firmware pour votre matériels.
+B) Mon environnement de travail pour ce projet :
+  1. PC
+  - Windows 10
+  - i7 4960X
+  - 64 Go RAM
+  - SSD Samsung 960 PRO 1 To  
+  - Hyperviseur : VMWare Workstation 15.5.2
+  
+  2. VM VMware
+  - Debian 10
+  - 4 vCPU
+  - 8 Go de RAM
+  - 80 Go VHD
+  - Hyperviseur : VirtualBox + Vagrant
+  
+  3. VM Vagrant
+  - Debian 10
+  - 1 vCPU
+  - 4 Go de RAM
+  - 32 Go VHD
+  - Hyperviseur : Docker
+  - Applications : VSCode, Docker, Ansible
+  
+  4. Docker Container
+  - Debian 10
