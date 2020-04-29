@@ -13,7 +13,7 @@ B) Usage :
     - Accéder en SSH au container Docker par :
         - ssh root@localhost -p 2222
 
-C) Mon environnement de travail pour ce projet :
+C) Mon environnement de travail pour le projet 3 : PC => VM VMware => VM Vagrant => Docker Container
   1. PC
   - Windows 10
   - i7 4960X
