@@ -28,3 +28,5 @@ B) Mon environnement de travail pour ce projet :
   
   4. Docker Container
   - Debian 10
+  - Applications : ssh, nginx
+  - Ports : 22, 80
