@@ -3,7 +3,7 @@ A) Ce repository stocke mes fichiers pour le projet 3 d'OpenClassrooms
 Etape 0 : .gitignore, .dockerignore, LICENCE.md, README.txt
 Etape 4 : Dockerfile, docker_commands.sh
 
-Usage :
+B) Usage :
   1. Depuis la VM VMware
     - Accéder à nginx depuis http://172.17.0.1:8080
   2. Depuis la VM Vagrant
