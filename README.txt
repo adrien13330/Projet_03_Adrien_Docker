@@ -8,8 +8,8 @@ B) Usage :
     - Accéder à nginx depuis http://172.17.0.1:8080
   2. Depuis la VM Vagrant
     - Accéder à nginx par :
-        - wget -O- localhost
-        - wget -O- 172.17.0.2
+        - wget -O- localhost:80
+        - wget -O- 172.17.0.2:80
     - Accéder en SSH au container Docker par :
         - ssh root@localhost -p 2222
 
