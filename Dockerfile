@@ -1,9 +1,11 @@
 FROM debian:latest
 
-RUN apt update -y && apt install -y openssh-server && apt install -y nginx
-RUN mkdir /var/run/sshd
-RUN echo 'root:root' | chpasswd
-RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
+RUN apt update -y \
+&& apt install -y openssh-server \
+&& apt install -y nginx \
+&& mkdir /var/run/sshd \
+&& echo 'root:root' | chpasswd \
+&& echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
