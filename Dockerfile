@@ -12,6 +12,6 @@ ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
 EXPOSE 22 80
-CMD ["/usr/sbin/sshd", "-D"]
-
+#CMD ["/usr/sbin/sshd", "-D"]
+CMD ./Docker_Wrapper.sh
 
