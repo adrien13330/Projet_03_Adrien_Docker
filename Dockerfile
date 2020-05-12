@@ -5,8 +5,7 @@ RUN apt update -y \
 && apt install -y nginx \
 && mkdir /var/run/sshd \
 && echo 'root:root' | chpasswd \
-&& echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
-&& sudo systemctl start nginx
+&& echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
