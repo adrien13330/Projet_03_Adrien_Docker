@@ -15,3 +15,9 @@ EXPOSE 22 80
 COPY Docker_Wrapper.sh ./
 CMD ./Docker_Wrapper.sh
 
+#FROM debian:latest
+
+#RUN apt update -y \
+#&& apt install -y nginx
+
+#EXPOSE 22 80
