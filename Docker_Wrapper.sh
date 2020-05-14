@@ -4,7 +4,7 @@
 nginx
 status=$?
 if [ $status -ne 0 ]; then
-  echo "Failed to start my_first_process: $status"
+  echo "Failed to start nginx: $status"
   exit $status
 fi
 
@@ -12,6 +12,6 @@ fi
 ssh
 status=$?
 if [ $status -ne 0 ]; then
-  echo "Failed to start my_second_process: $status"
+  echo "Failed to start ssh: $status"
   exit $status
 fi
