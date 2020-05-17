@@ -7,4 +7,6 @@
   
   - [Projet_03_Adrien_Docker](https://github.com/adrien13330/Projet_03_Adrien_Docker/)
 
-Merci de lire le [README.md](https://github.com/adrien13330/Projet_03_Adrien_Vagrant/blob/master/README.md) du repository Projet_03_Adrien_Vagrant.
+Merci de lire le [README.md](https://github.com/adrien13330/Projet_03_Adrien_Vagrant/blob/master/README.md) du premier repository de cette liste.
+
+Ce repository contient en outre le docker-compose.yml créé lors de la partie finale du cours sur Docker.
