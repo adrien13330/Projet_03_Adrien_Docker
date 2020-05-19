@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:10
 
 RUN apt update -y \
 && apt install -y nginx
